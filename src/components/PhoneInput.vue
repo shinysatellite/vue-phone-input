@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 const props = defineProps<{
   modelValue: string;
@@ -15,6 +15,12 @@ function handleInput(event: Event) {
   const rawInput = inputElement.value;
   const allowed = rawInput.replace(/[^0-9+()\- ]/g, '');
   inputValue.value = allowed;
+
+  nextTick(() => {
+    if (phoneInput.value) {
+      phoneInput.value.value = allowed;
+    }
+  });
 
   emit('update:modelValue', allowed);
 }
