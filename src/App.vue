@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="app">
     <PhoneInput v-model="phone" />
-    <div>Entered Phone Number: {{ phone }}</div>
+    <p><b>Entered Phone Number:</b> {{ phone }}</p>
   </div>
 </template>
 
@@ -19,6 +19,6 @@ const phone = ref("");
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px 80px;
 }
 </style>
