@@ -65,6 +65,14 @@ button:focus-visible {
   text-align: center;
 }
 
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
