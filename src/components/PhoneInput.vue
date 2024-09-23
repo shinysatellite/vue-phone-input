@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, nextTick } from 'vue';
+import { ref, nextTick, computed } from 'vue';
 
 const props = defineProps<{
   modelValue: string;
@@ -9,6 +9,10 @@ const emit = defineEmits(['update:modelValue']);
 
 const inputValue = ref<string>(props.modelValue);
 const phoneInput = ref<HTMLInputElement | null>(null);
+
+const placeholder = computed<string>(() => {
+  return navigator.language === 'en-US' ? '+1 (123) 456-7890' : 'Phone number';
+});
 
 function handleInput(event: Event) {
   const inputElement = event.target as HTMLInputElement;
@@ -32,6 +36,6 @@ function handleInput(event: Event) {
     ref="phoneInput"
     :value="inputValue"
     @input="handleInput"
-    placeholder="Phone number"
+    :placeholder="placeholder"
   />
 </template>

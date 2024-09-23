@@ -8,10 +8,6 @@ const phone = ref('');
 <template>
   <div>
     <PhoneInput v-model="phone" />
-    <div>Entered Phone: {{ phone }}</div>
+    <div>Entered Phone Number: {{ phone }}</div>
   </div>
 </template>
-
-<style scoped>
-
-</style>
